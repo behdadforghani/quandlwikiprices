@@ -6,7 +6,9 @@ the updates using Apache Spark into a local database.
 ## building
 1. Install maven
 2. Type:
+````
 	mvn clean compile package
+````
 	
 ## Setup
 To use this software, first set the following environment variables:
