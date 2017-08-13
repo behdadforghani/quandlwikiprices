@@ -1,0 +1,9 @@
+/target/
+/bin/
+/.project
+/WIKI.csv.zip
+/.settings
+/checkpoint
+/.cache-main
+/.classpath
+/dependency-reduced-pom.xml
