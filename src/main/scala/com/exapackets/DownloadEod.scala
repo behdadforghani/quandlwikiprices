@@ -132,9 +132,7 @@ object DownloadEod {
     }
 
     println("downloading data")
-//    val inputCsv = QuandlRest.fetchData(key)
-    val inputCsv = "WIKI_PRICES_212b326a081eacca455e13140d7bb9db.csv"
-    println("start="+start)
+    val inputCsv = QuandlRest.fetchData(key)
     println("fetched data, uploading data to database")
     loadData(inputCsv, start)
     val now = DateTime.now
