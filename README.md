@@ -3,6 +3,9 @@
 This software downloads end of the day stock prices from Quandl WIKI database, extracts and stores
 the updates using Apache Spark into a local database.
 
+This data set has about 15 million lows and can only be downloaded in its entirety. The job of this
+program is to download the data set and upload the updates to a local database.
+
 ## building
 1. Install maven
 2. Type:
