@@ -40,3 +40,5 @@ If you do not have a Spark cluster, the following command will run the Spark job
 ````
 java -Dspark.master="local[4]" -Dspark.driver.bindAddress=127.0.0.1 -jar target/download_eod-1.0-SNAPSHOT.jar
 ````
+
+[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=MU7T4U52Q4N2N)
