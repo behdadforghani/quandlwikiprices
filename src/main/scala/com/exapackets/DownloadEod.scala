@@ -66,13 +66,13 @@ object DownloadEod {
         .option("delimiter",",").option("quote","")
         .load(csvFile)
         
-        // rename columns ex-dividend and open so that the users do
+        // rename columns ex-dividend, date and open (reserved words) and open so that the users do
         // not need to escape the column names 
-        val colMap = Map("ex-dividend" -> "ex_dividend", "open" -> "open_value")
+        val colMap = Map("ex-dividend" -> "ex_dividend", "open" -> "open_value", "date" -> "date_value")
         
         var dateFilteredDf:DataFrame = null
         if(start != null) {
-          dateFilteredDf = df.filter("date > cast('" + start +"' as DATE)")
+          dateFilteredDf = df.filter(s"date_value > cast('${start}' as DATE)")
         } else {
           dateFilteredDf = df
         }
