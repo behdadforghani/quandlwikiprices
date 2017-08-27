@@ -72,7 +72,7 @@ object DownloadEod {
         
         var dateFilteredDf:DataFrame = null
         if(start != null) {
-          dateFilteredDf = df.filter(s"date_value > cast('${start}' as DATE)")
+          dateFilteredDf = df.filter(s"date > cast('${start}' as DATE)")
         } else {
           dateFilteredDf = df
         }
@@ -120,7 +120,8 @@ object DownloadEod {
     args.size match {
       case 0 => {
         try {
-          start = scala.io.Source.fromFile(checkPoint).mkString
+          start = scala.io.Source.fromFile(checkPoint).mkString.trim()
+          println(s"last update ${start}")
         } catch {
           case _: Throwable => LOG.warn("could not find checkpoint file will try to upload the whole database")
         }
@@ -135,6 +136,8 @@ object DownloadEod {
     val inputCsv = QuandlRest.fetchData(key)
     println("fetched data, uploading data to database")
     loadData(inputCsv, start)
+//  For testing    
+//    loadData("WIKI_PRICES_212b326a081eacca455e13140d7bb9db.csv", start)
     val now = DateTime.now
     val today = now.toString(dateFormat)
     val pw = new PrintWriter(new File(checkPoint))
