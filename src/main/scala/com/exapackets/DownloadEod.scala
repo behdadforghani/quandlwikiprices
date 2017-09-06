@@ -139,9 +139,10 @@ object DownloadEod {
 //  For testing    
 //    loadData("WIKI_PRICES_212b326a081eacca455e13140d7bb9db.csv", start)
     val now = DateTime.now
-    val today = now.toString(dateFormat)
+    val tomorrowTime = now.plusDays(1)
+    val tomorrow = tomorrowTime.toString(dateFormat)
     val pw = new PrintWriter(new File(checkPoint))
-    pw.write(today)
+    pw.write(tomorrow)
     pw.close
   }
 }
