@@ -37,7 +37,7 @@ DownloadEod [start date]
 
 Start date causes the software to upload the data after that date. If no start date is specified, the program first checks if the check point file exists. If it does, it uploads the files since the last check point. Otherwise, it will upload the whole database.
 
-### Invokation
+### Spark Note
 If you do not have a Spark cluster, the following command will run the Spark jobs using 4 threads:
 
 ````
