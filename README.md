@@ -6,7 +6,7 @@ the updates using Apache Spark into a local database.
 This data set has about 15 million lows and can only be downloaded in its entirety. The job of this
 program is to download the data set and upload the updates to a local database.
 
-## building
+## Building
 1. Install maven
 2. Type:
 ````
@@ -27,7 +27,7 @@ export QUANDL_CHECKPOINT="/path/to/checkpoint/file"
 
 Note QUANDL_CHECKPOINT should point to a file where the software will write the date of the last download
 
-## running
+## Running
 
 The usage of the program is:
 
